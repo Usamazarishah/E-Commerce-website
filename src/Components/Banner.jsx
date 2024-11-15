@@ -9,7 +9,7 @@ export default function Banner() {
           ShopNow
         </span>
       </div>
-      <div className="mr-32">
+      <div className="mr-[92px]">
         <select className="bg-slate-950 text-sm hover:cursor-pointer">
           <option>English</option>
           <option>French</option>

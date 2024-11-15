@@ -6,14 +6,18 @@ export default function ProductCard(Props) {
   //   console.log(Props);
 
   return (
-    <div className="w-[270px] h-[350px] my-7">
+    <div className="w-[270px] min-h-[350px] my-4">
       <div className="h-[250px] bg-secondary relative p-3 rounded">
         <div className="flex justify-between">
           <div>
             {Props.cardDiscount ? (
-              <button className="bg-primary rounded text-white text-xs absolute top-3 py-[5px] px-3">
+              <p className="bg-primary rounded text-white text-xs absolute top-3 py-[5px] px-3">
                 {Props.cardDiscount}
-              </button>
+              </p>
+            ) : Props.newItem ? (
+              <p className="bg-[#00FF66] rounded text-white text-xs absolute top-3 py-[5px] px-3">
+                {Props.newItem}
+              </p>
             ) : null}
           </div>
           <div className="flex flex-col gap-2 ">
@@ -22,11 +26,7 @@ export default function ProductCard(Props) {
           </div>
         </div>
 
-        <img
-          src={Props.cardImage}
-          className="mx-auto -mt-8 "
-          alt="controller"
-        />
+        <img src={Props.cardImage} className="mx-auto -mt-8" alt="controller" />
       </div>
       <div className="flex flex-col gap-3">
         <p className="pt-3 font-medium text-base">{Props.cardName}</p>

@@ -2,7 +2,7 @@ import category_img from '../assets/images/category.png';
 
 export default function Categories() {
   return (
-    <div className='flex justify-between items-center mx-32 my-24  bg-[#000000] h-[480px] text-white pl-14'>
+    <div className='flex justify-between items-center mx-[92px] mt-28  bg-[#000000] h-[480px] text-white pl-14'>
         <div className='flex flex-col gap-8 my-16 items-start'>
             <p className='text-[#00FF66]'>Categories</p>
             <p className='text-5xl font-medium flex flex-col gap-3'><span>Enhance Your</span> <span >Music Experience</span> </p>
@@ -29,7 +29,7 @@ export default function Categories() {
             </div>
             <div className='mt-3'><button className='bg-[#00FF66] w-44 h-14 rounded '>Buy Now!</button></div>
         </div>
-        <div className=' '>
+        <div className='rotate-2'>
             <img src={category_img} className='w-[90%] ' alt="category_img" />
         </div>
     </div>

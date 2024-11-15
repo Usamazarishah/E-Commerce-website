@@ -1,5 +1,5 @@
 import ProductCard from "./ProductCard";
-import controller_img from "../assets/images/card_images/controller.png";
+import controller1_img from "../assets/images/card_images/controller1.png";
 import keyboard_img from "../assets/images/card_images/keyboard.png";
 import screen_img from "../assets/images/card_images/screen.png";
 import chair_img from "../assets/images/card_images/chair.png";
@@ -7,9 +7,9 @@ import chair_img from "../assets/images/card_images/chair.png";
 export default function FlashSale() {
     return (
       <>
-        <div className="flex mx-32 gap-7 ">
+        <div className="flex mx-[92px] gap-7 ">
           <ProductCard
-            cardImage={controller_img}
+            cardImage={controller1_img}
             cardDiscount="40%"
             cardName="HAVIT HV-G92 Gamepad"
             discountedRate="$120"
@@ -42,10 +42,10 @@ export default function FlashSale() {
             percent="99"
           />
         </div>
-        <div className="bg-primary text-white w-56 h-12 rounded font-sm text-sm my-8 mx-auto text-center p-3 hover:cursor-pointer ">
+        <div className="bg-primary text-white w-60 h-14 rounded my-8 mx-auto text-center p-[18px] hover:cursor-pointer ">
           <button className="">View All Products</button>
         </div>
-        <div className="border-b border-y-gray-300 -mb-12 mx-32 pt-5"></div>
+        <div className="border-b border-y-gray-300 -mb-12 mx-[92px] pt-5"></div>
       </>
     );
   }

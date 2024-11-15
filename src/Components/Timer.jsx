@@ -3,7 +3,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 
 export default function Timer() {
   return (
-    <div className="mx-32 mt-32">
+    <div className="mx-[92px] mt-32">
       <div className="flex gap-4 items-center">
         <span className="bg-primary py-5 px-[10px] rounded"></span>
         <span className="text-primary font-semibold text-base">Today’s</span>

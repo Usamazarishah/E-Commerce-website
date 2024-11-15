@@ -7,7 +7,7 @@ import bookself_img from "../assets/images/card_images/bookself.png";
 export default function SellingProduct() {
   return (
     <div>
-      <div className="mx-32 pt-12">
+      <div className="mx-[92px] pt-12">
         <div className="flex gap-4 items-center">
           <span className="bg-primary py-5 px-[10px] rounded"></span>
           <span className="text-primary font-semibold text-base">
@@ -25,7 +25,7 @@ export default function SellingProduct() {
           </div>
         </div>
       </div>
-      <div className="flex mx-32 gap-7 pt-7">
+      <div className="flex mx-[92px] gap-7 pt-7">
         <ProductCard
           cardImage={coat_img}
           cardName="The north coat"

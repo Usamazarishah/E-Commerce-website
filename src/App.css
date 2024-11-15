@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+      
 :root{
         --primary:#DB4444;
         --secondary:#F5F5F5;
@@ -28,3 +29,11 @@ body{
         padding: 7px;
         font-size: 34px;
 }
+.footer_text{
+        font-size: 15px;
+        font-weight: 300;
+}
+
+
+
+
