@@ -13,12 +13,12 @@ const categories = [
 ];
 export default function Hero() {
   return (
-    <div className="flex justify-between  mx-[92px] items-center">
-      <div className="flex w-[19%] border-r border-r-gray-300">
+    <div className="flex justify-between  container-x items-center">
+      <div className="flex min-w-[19%] border-r border-r-gray-300">
         <ul className="flex flex-col gap-y-[17px] text-base mt-9">
           {categories.map((items) => (
-            <li className="hover:underline">
-              <a href="">{items}</a>
+            <li>
+              <a className="link_hover" href="">{items}</a>
             </li>
           ))}
         </ul>

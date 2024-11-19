@@ -7,7 +7,7 @@ import chair_img from "../assets/images/card_images/chair.png";
 export default function FlashSale() {
     return (
       <>
-        <div className="flex mx-[92px] gap-7 ">
+        <div className="flex container-x gap-7 ">
           <ProductCard
             cardImage={controller1_img}
             cardDiscount="40%"
@@ -45,7 +45,7 @@ export default function FlashSale() {
         <div className="bg-primary text-white w-60 h-14 rounded my-8 mx-auto text-center p-[18px] hover:cursor-pointer ">
           <button className="">View All Products</button>
         </div>
-        <div className="border-b border-y-gray-300 -mb-12 mx-[92px] pt-5"></div>
+        <div className="border-b border-y-gray-300 -mb-12 container-x pt-5"></div>
       </>
     );
   }

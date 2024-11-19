@@ -1,4 +1,4 @@
-import sendImg from "../assets/images/footer_imges/icon-send.png";
+import { VscSend } from "react-icons/vsc";
 import QrCodeImg from "../assets/images/footer_imges/Qr Code.png";
 import GooglePlayImg from "../assets/images/footer_imges/GooglePlay.png";
 import AppStoreImg from "../assets/images/footer_imges/AppStore.png";
@@ -7,7 +7,6 @@ import { FiTwitter } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa";
 import { RiLinkedinLine } from "react-icons/ri";
 import { PiCopyright } from "react-icons/pi";
-
 
 export default function Footer() {
   return (
@@ -23,7 +22,7 @@ export default function Footer() {
               className="w-full bg-transparent outline-none border-none placeholder-zinc-600"
               placeholder="Enter your email"
             />
-            <img src={sendImg} className="w-6 h-6" alt="" />
+            <VscSend className=" text-3xl" />
           </div>
         </div>
         <div className="flex flex-col gap-4">
@@ -65,18 +64,18 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex gap-6 text-xl pt-2">
-          <LiaFacebookF />
-          <FiTwitter />
+            <LiaFacebookF />
+            <FiTwitter />
             <FaInstagram />
             <RiLinkedinLine />
-            </div>
+          </div>
         </div>
       </div>
+      
       <div className="flex justify-center items-center text-center gap-[6px] mt-[70px] text-zinc-500 pb-6">
-        <PiCopyright className="text-[22px]"/>
+        <PiCopyright className="text-[22px]" />
         <p>Copyright Rimel 2022. All right reserved</p>
-      </div> 
-       
+      </div>
     </div>
   );
 }

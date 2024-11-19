@@ -1,6 +1,6 @@
 export default function Banner() {
   return (
-    <div className="bg-slate-950 text-gray-50 h-12 flex justify-between items-center">
+    <div id="top" className="bg-slate-950 text-gray-50 h-12 flex justify-between items-center">
       <div className="bg-slate-950 text-gray-50 h-12 flex justify-center items-center text-sm gap-2 ml-[400px]">
         <p className="">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
