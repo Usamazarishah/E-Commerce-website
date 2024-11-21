@@ -4,7 +4,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { HiMiniUserCircle } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
-import { LiaTimesSolid } from "react-icons/lia";
+import { IoClose } from "react-icons/io5";
 
 import profileImg from "../assets/images/profile_img.jpg";
 import { useState } from "react";
@@ -18,8 +18,8 @@ export default function Navbar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const isLoggedIn = true;
   return (
-    <div className="border-y border-y-gray-300">
-      <div className="h-[85px] flex justify-between items-center text-center container-x pt-5 relative">
+    <div className="border-b border-b-gray-300  sticky z-10 top-12 bg-white ">
+      <div className="h-[85px] flex justify-between items-center text-center container-x pt-5">
         <h1 className="font-bold text-2xl">Exclusive</h1>
         <ul className="hidden lg:flex gap-10 font-normal ">
           {links.map((item, i) => {
@@ -35,33 +35,46 @@ export default function Navbar() {
             </li>
           ) : null}
         </ul>
-         <button
-          onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
-          className="text-3xl lg:hidden order-3"
-        >
-          {isHamburgerOpen ? <LiaTimesSolid /> : <IoMenu />}
-        </button>
-        {isHamburgerOpen && 
-                 <div className="bg-white fixed h-[100%] w-80 z-10 top-0 right-0 pt-[135px]">
-                 <ul className=" flex flex-col gap-4 text-start ">
-                   {links.map((item, i) => {
-                     return (
-                       <li className="border-b border-b-gray-300 pb-3 " key={i}>
-                         <Link className="pl-6 hover:text-primary" to={item.link}>{item.title}</Link>
-                       </li>
-                     );
-                   })}
-                   {!isLoggedIn ? (
-                     <li className="border-b border-b-gray-300 pb-3">
-                       <Link className="pl-6 hover:text-primary" to="/signup">Sign Up</Link>
-                     </li>
-                   ) : null}
-                 </ul>
-               </div>
-        }
+        {!isHamburgerOpen && (
+          <button
+            onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
+            className="text-3xl lg:hidden order-3"
+          >
+            <IoMenu />
+          </button>
+        )}
+        {isHamburgerOpen && (
+          <div className="bg-white fixed h-[100%] w-[350px] z-10 top-0 right-0 pt-[105px] box-shadow border-l border-l-gray-100 shadow-xl	">
+            <button
+              onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
+              className="text-3xl lg:hidden relative"
+            >
+              <IoClose className="text-3xl absolute left-24 -top-8" />
+            </button>
+
+            <ul className=" flex flex-col gap-4 text-start ">
+              {links.map((item, i) => {
+                return (
+                  <li className="border-b border-b-gray-300 pb-3 " key={i}>
+                    <Link className="pl-6 hover:text-primary" to={item.link}>
+                      {item.title}
+                    </Link>
+                  </li>
+                );
+              })}
+              {!isLoggedIn ? (
+                <li className="border-b border-b-gray-300 pb-3">
+                  <Link className="pl-6 hover:text-primary" to="/signup">
+                    Sign Up
+                  </Link>
+                </li>
+              ) : null}
+            </ul>
+          </div>
+        )}
 
         <div className="flex items-center gap-6 text-center">
-          <div className="flex bg-secondary color-black w-60 h-9 justify-around items-center  text-sm rounded px-4">
+          <div className="flex bg-secondary color-black w-40 md:w-60 md:h-9 justify-around items-center  text-sm rounded px-4">
             <input
               type="search"
               className="nav_input bg-transparent outline-none w-full"

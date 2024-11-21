@@ -32,7 +32,7 @@ export default function DeliverySection() {
           deliveryTitle="We reurn money within 30 days"
         />
       </div>
-      <a href="#top" className="flex justify-end mr-[92px] mt-2 ">
+      <a href="#" className="flex justify-end mr-[92px] mt-2 ">
         <BsArrowUpShort className="arrow" />
       </a>
     </>
