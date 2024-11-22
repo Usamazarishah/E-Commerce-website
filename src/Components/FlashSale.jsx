@@ -3,6 +3,7 @@ import controller1_img from "../assets/images/card_images/controller1.png";
 import keyboard_img from "../assets/images/card_images/keyboard.png";
 import screen_img from "../assets/images/card_images/screen.png";
 import chair_img from "../assets/images/card_images/chair.png";
+import { Link } from "react-router-dom";
 
 export default function FlashSale() {
     return (
@@ -43,7 +44,7 @@ export default function FlashSale() {
           />
         </div>
         <div className="bg-primary text-white w-60 h-14 rounded my-8 mx-auto text-center p-[18px] hover:cursor-pointer ">
-          <button className="">View All Products</button>
+          <Link to="api-product" className="">View All Products</Link>
         </div>
         <div className="border-b border-y-gray-300 -mb-12 container-x pt-5"></div>
       </>

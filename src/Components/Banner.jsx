@@ -24,22 +24,20 @@ export default function Banner() {
           </div>
         </div>
       </div>
-      <div className="bg-slate-950 h-13 flex flex-col sm:hidden text-xs text-white sticky top-0 z-10">
-        <div className="w-full pt-2">
-          <marquee behavior="" direction="left">
+      <div className="bg-slate-950 h-13 flex flex-col sm:hidden text-xs text-white sticky top-0 z-10 pt-2">
+
+          <marquee behavior="scroll" direction="left" scrollamount="5" width="100%" vspace="px">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           </marquee>
-        </div>
-        <div className=" flex text-center items-center justify-evenly pb-2">
-          <p className="font-semibold hover:underline hover:cursor-pointer flex sm:hidden text-white text-xs">
+
+        <div className=" flex text-center items-center justify-evenly pb-1">
+          <p className="font-semibold hover:underline hover:cursor-pointer  text-white text-xs pb-1">
             ShopNow
           </p>
-          <div className=" flex sm:hidden text-xs">
-            <select className="bg-slate-950 text-sm hover:cursor-pointer">
+            <select className="bg-slate-950  hover:cursor-pointer text-xs pb-1">
               <option>English</option>
               <option>French</option>
             </select>
-          </div>
         </div>
       </div>
     </>

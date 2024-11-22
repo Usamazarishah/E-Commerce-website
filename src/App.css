@@ -59,3 +59,9 @@ body {
 .link_hover:hover::before {
   width: 100%;
 }
+.icons:hover{
+  background-color: rgb(221, 221, 221);
+  ;
+  border-radius: 50%;
+  /* padding: 5px; */
+}

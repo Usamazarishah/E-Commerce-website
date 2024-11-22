@@ -4,7 +4,6 @@ import { PiStarFill } from "react-icons/pi";
 
 export default function ProductCard(Props) {
   //   console.log(Props);
-
   return (
     <div className="w-[270px] min-h-[350px] my-4">
       <div className="h-[250px] bg-secondary relative p-3 rounded">
@@ -26,7 +25,7 @@ export default function ProductCard(Props) {
           </div>
         </div>
 
-        <img src={Props.cardImage} className="mx-auto -mt-8" alt="controller" />
+        <img src={Props.cardImage} className=" -mt-20" alt="controller" />
       </div>
       <div className="flex flex-col gap-3">
         <p className="pt-3 font-medium text-base">{Props.cardName}</p>
