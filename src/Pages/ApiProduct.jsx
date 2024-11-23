@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import ProductCard from "../Components/ProductCard";
 import { CiSearch } from "react-icons/ci";
 
-export default function ApiProduct() {
+export default function ApiProduct(Props) {
   // const discountPrice =
-  // (item.price - item.discountPercentage * (item.price/100)).toFixed(2);
+  // (Props.price - item.discountPercentage * (Props.price/100)).toFixed(2);
   // console.log("discountPrice", discountPrice);
 
   const API_KEY = "https://dummyjson.com/products";
@@ -29,13 +29,15 @@ export default function ApiProduct() {
 
   const searchProducts = () => {
     const result = products?.filter((item) => {
-      return item.price > 50 ;
+      return item.title
+        .toLocaleLowerCase()
+        .includes(searchTerm.toLocaleLowerCase());
     });
     console.log("result", result);
 
     return result || [];
   };
-  const searchResult = searchProducts()
+  const searchResult = searchProducts();
 
   return (
     <>
@@ -43,13 +45,15 @@ export default function ApiProduct() {
         <input
           type="search"
           onChange={(event) => {
-            setSearchTerm(event.target.value);
+            setSearchTerm(event.target.value?.toLowerCase());
           }}
           className="w-full outline-none bg-transparent"
         />
         <CiSearch className="text-xl sm:text-2xl font-extrabold text-black" />
       </div>
       <div className="flex flex-wrap gap-8 justify-center items-center text-center">
+        {searchResult.length === 0 ? "product not found..." : ""}
+
         {searchResult?.map((item) => {
           return (
             <ProductCard
@@ -57,7 +61,7 @@ export default function ApiProduct() {
               cardImage={item.thumbnail}
               cardName={item.title}
               oldRate={item.price}
-              // discountedRate={discountPrice}
+              // discountedRate={item.discountPrice}
               percent={item.rating}
             />
           );
