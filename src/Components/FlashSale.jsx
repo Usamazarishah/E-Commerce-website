@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function FlashSale() {
     return (
       <>
-        <div className="flex container-x gap-7 ">
+        <div className="flex container-x gap-7 flex-wrap">
           <ProductCard
             cardImage={controller1_img}
             cardDiscount="40%"

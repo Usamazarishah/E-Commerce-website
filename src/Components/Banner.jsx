@@ -1,6 +1,7 @@
 export default function Banner() {
   return (
-    <>
+    <> 
+    {/* for desktop */}
       <div
         id="top"
         className="bg-slate-950 text-gray-50 h-12 hidden sm:flex justify-around md:justify-center lg:justify-end  items-center sticky top-0 z-10 "
@@ -24,6 +25,7 @@ export default function Banner() {
           </div>
         </div>
       </div>
+      {/* for mobile */}
       <div className="bg-slate-950 h-13 flex flex-col sm:hidden text-xs text-white sticky top-0 z-10 pt-2">
 
           <marquee behavior="scroll" direction="left" scrollamount="5" width="100%" vspace="px">

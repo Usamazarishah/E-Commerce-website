@@ -3,10 +3,8 @@ import { useEffect, useState } from "react";
 import ProductCard from "../Components/ProductCard";
 import { CiSearch } from "react-icons/ci";
 
-export default function ApiProduct(Props) {
-  // const discountPrice =
-  // (Props.price - item.discountPercentage * (Props.price/100)).toFixed(2);
-  // console.log("discountPrice", discountPrice);
+export default function ApiProduct() {
+
 
   const API_KEY = "https://dummyjson.com/products";
 
@@ -15,7 +13,7 @@ export default function ApiProduct(Props) {
   const getProductData = async () => {
     const response = await axios(API_KEY);
 
-    // console.log("response=>", response.data.products);
+    console.log("response=>", response.data.products);
     setProducts(response?.data?.products);
   };
 
@@ -61,9 +59,11 @@ export default function ApiProduct(Props) {
               cardImage={item.thumbnail}
               cardName={item.title}
               oldRate={item.price}
-              // discountedRate={item.discountPrice}
+              discountedRate={(item.price - (item.price * item.discountPercentage) / 100).toFixed(2)}
               percent={item.rating}
             />
+
+            
           );
         })}
       </div>
