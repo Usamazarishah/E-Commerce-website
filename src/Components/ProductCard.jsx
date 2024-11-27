@@ -1,10 +1,10 @@
 import { TiHeartOutline } from "react-icons/ti";
 import { FiEye } from "react-icons/fi";
-import { PiStarFill } from "react-icons/pi";
+import ReactStars from "react-stars";
 
 export default function ProductCard(Props) {
   //   console.log(Props);
-  
+
   return (
     <div className="w-[270px] h-[350px] my-4">
       <div className="h-[250px] bg-secondary  rounded flex items-center justify-center">
@@ -29,9 +29,11 @@ export default function ProductCard(Props) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-3">
-        <p className="pt-3 font-medium text-base">{Props.cardName}</p>
-        <p className="flex gap-3">
+      <div className="flex flex-col">
+        <p className="pt-4 font-medium text-base text-start">
+          {Props.cardName}
+        </p>
+        <p className="flex gap-3 pt-2">
           <span className="text-primary font-medium">
             {Props.discountedRate}
           </span>
@@ -39,13 +41,15 @@ export default function ProductCard(Props) {
             {Props.oldRate}
           </span>
         </p>
-        <p className="flex text-[#FFAD33] gap-1">
-          <PiStarFill />
-          <PiStarFill />
-          <PiStarFill />
-          <PiStarFill />
-          <PiStarFill />
-          <span className="-my-[3px] pl-1 text-gray-500 font-semibold text-sm">
+        <p className="flex text-center items-center text-[#FFAD33] gap-2 ">
+          <ReactStars
+            count={5}
+            value={Props.rating}
+            edit={false}
+            size={20}
+            color2={"#FFAD33"}
+          />
+          <span className=" text-gray-500 font-semibold text-sm">
             ({Props.percent})
           </span>
         </p>

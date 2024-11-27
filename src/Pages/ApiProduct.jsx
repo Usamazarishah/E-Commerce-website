@@ -6,7 +6,7 @@ import { CiSearch } from "react-icons/ci";
 export default function ApiProduct() {
 
 
-  const API_KEY = "https://dummyjson.com/products";
+  const API_KEY = "https://dummyjson.com/products?limit=40&skip=4";
 
   const [products, setProducts] = useState(null);
 
@@ -57,10 +57,12 @@ export default function ApiProduct() {
             <ProductCard
               key={item.id}
               cardImage={item.thumbnail}
+              cardDiscount={`-${Math.round(item.discountPercentage)}%`}
               cardName={item.title}
               oldRate={item.price}
               discountedRate={(item.price - (item.price * item.discountPercentage) / 100).toFixed(2)}
               percent={item.rating}
+              rating={item.rating}
             />
 
             

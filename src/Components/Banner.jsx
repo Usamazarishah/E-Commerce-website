@@ -26,9 +26,9 @@ export default function Banner() {
         </div>
       </div>
       {/* for mobile */}
-      <div className="bg-slate-950 h-13 flex flex-col sm:hidden text-xs text-white sticky top-0 z-10 pt-2">
+      <div className="bg-slate-950 h-14 flex flex-col sm:hidden text-xs text-white sticky top-0 z-10 pt-2">
 
-          <marquee behavior="scroll" direction="left" scrollamount="5" width="100%" vspace="px">
+          <marquee behavior="scroll" direction="left" scrollamount="5" width="100%" vspace="4px">
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           </marquee>
 

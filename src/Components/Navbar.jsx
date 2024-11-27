@@ -20,7 +20,7 @@ export default function Navbar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const isLoggedIn = true;
   return (
-    <div className=" shadow-md border-b-gray-300  sticky z-10 top-12 bg-white ">
+    <div className=" shadow-md border-b-gray-300  sticky z-10 top-14 sm:top-12 bg-white ">
       <div className="h-[85px] flex justify-between items-center text-center mx-4 sm:mx-4 md:mx-16 xl:mx-[92px] pt-5">
         <img src={desktopLogo} alt="" className="hidden sm:flex" />
         <img src={mobileLogo} alt="" className="w-10 sm:w-12 flex sm:hidden " />
