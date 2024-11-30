@@ -8,6 +8,7 @@ import Home from "./Pages/Home";
 import Signup from "./Pages/Signup";
 import ApiProduct from "./Pages/ApiProduct";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
+import ProductDetail from "./Pages/ProductDetail";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/api-product" element={<ApiProduct />} />
+        <Route path="/product/:id" element={<ProductDetail/>} />
       </Routes>
 
       <Footer />

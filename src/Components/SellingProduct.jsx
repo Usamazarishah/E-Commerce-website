@@ -1,10 +1,14 @@
 import ProductCard from "./ProductCard";
-import coat_img from "../assets/images/card_images/coat.png";
-import bag_img from "../assets/images/card_images/bag.png";
-import cpu_img from "../assets/images/card_images/cpu.png";
-import bookself_img from "../assets/images/card_images/bookself.png";
+import useProducts from "../hooks/useProducts";
+import { Link } from "react-router-dom";
+
+// import coat_img from "../assets/images/card_images/coat.png";
+// import bag_img from "../assets/images/card_images/bag.png";
+// import cpu_img from "../assets/images/card_images/cpu.png";
+// import bookself_img from "../assets/images/card_images/bookself.png";
 
 export default function SellingProduct() {
+  const { products, isLoading, error } = useProducts("limit=4&skip=34");
   return (
     <div>
       <div className="container-x pt-12">
@@ -21,38 +25,33 @@ export default function SellingProduct() {
           </div>
 
           <div className="bg-primary w-40 h-14 rounded text-white text-center pt-4 -mt-3 hover:cursor-pointer">
-            <button>View All</button>
+            <Link to={"api-product"}>View All</Link>
           </div>
         </div>
       </div>
       <div className="flex container-x gap-7 pt-7">
-        <ProductCard
-          cardImage={coat_img}
-          cardName="The north coat"
-          discountedRate="$260"
-          oldRate="$360"
-          percent="65"
-        />
-        <ProductCard
-          cardImage={bag_img}
-          cardName="Gucci duffle bag"
-          discountedRate="$960"
-          oldRate="$1160"
-          percent="65"
-        />
-        <ProductCard
-          cardImage={cpu_img}
-          cardName="RGB liquid CPU Cooler"
-          discountedRate="$160"
-          oldRate="$170"
-          percent="65"
-        />
-        <ProductCard
-          cardImage={bookself_img}
-          cardName="Small BookSelf"
-          discountedRate="$300"
-          percent="65"
-        />
+        {isLoading ? "Loading..." : ""}
+        {error}
+
+        <div className="flex  gap-7 flex-wrap">
+          {products?.map((item) => {
+            return (
+              <ProductCard
+                id={item.id}
+                cardImage={item.thumbnail}
+                cardDiscount={`-${Math.round(item.discountPercentage)}%`}
+                cardName={item.title}
+                oldRate={`$${item.price}`}
+                discountedRate={`$${(
+                  item.price -
+                  (item.price * item.discountPercentage) / 100
+                ).toFixed(2)}`}
+                percent={item.rating}
+                rating={item.rating}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

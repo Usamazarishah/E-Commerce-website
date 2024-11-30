@@ -1,25 +1,11 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ProductCard from "../Components/ProductCard";
 import { CiSearch } from "react-icons/ci";
+import useProducts from "../hooks/useProducts";
 
 export default function ApiProduct() {
 
-
-  const API_KEY = "https://dummyjson.com/products?limit=40&skip=4";
-
-  const [products, setProducts] = useState(null);
-
-  const getProductData = async () => {
-    const response = await axios(API_KEY);
-
-    console.log("response=>", response.data.products);
-    setProducts(response?.data?.products);
-  };
-
-  useEffect(() => {
-    getProductData();
-  }, []);
+  const {products,isLoading,error} = useProducts("limit=30&skip=4")
 
   // console.log("products=>", products);
   const [searchTerm, setSearchTerm] = useState("");
@@ -55,12 +41,12 @@ export default function ApiProduct() {
         {searchResult?.map((item) => {
           return (
             <ProductCard
-              key={item.id}
+              id={item.id}
               cardImage={item.thumbnail}
               cardDiscount={`-${Math.round(item.discountPercentage)}%`}
               cardName={item.title}
-              oldRate={item.price}
-              discountedRate={(item.price - (item.price * item.discountPercentage) / 100).toFixed(2)}
+              oldRate={`$${item.price}`}
+              discountedRate={`$${(item.price - (item.price * item.discountPercentage) / 100).toFixed(2)}`}
               percent={item.rating}
               rating={item.rating}
             />

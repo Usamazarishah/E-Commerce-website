@@ -1,12 +1,13 @@
 import { TiHeartOutline } from "react-icons/ti";
 import { FiEye } from "react-icons/fi";
 import ReactStars from "react-stars";
+import { Link } from "react-router-dom";
 
 export default function ProductCard(Props) {
   //   console.log(Props);
 
   return (
-    <div className="w-[270px] h-[350px] my-4">
+    <Link to={`/product/${Props.id}`} className="w-[270px] h-[350px] my-4 ">
       <div className="h-[250px] bg-secondary  rounded flex items-center justify-center">
         <div className="relative h-full w-full p-3">
           <div className="absolute top-3">
@@ -41,7 +42,7 @@ export default function ProductCard(Props) {
             {Props.oldRate}
           </span>
         </p>
-        <p className="flex text-center items-center text-[#FFAD33] gap-2 ">
+        <div className="flex text-center items-center text-[#FFAD33] gap-2 ">
           <ReactStars
             count={5}
             value={Props.rating}
@@ -52,8 +53,8 @@ export default function ProductCard(Props) {
           <span className=" text-gray-500 font-semibold text-sm">
             ({Props.percent})
           </span>
-        </p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
