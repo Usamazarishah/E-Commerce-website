@@ -16,7 +16,7 @@ export default function Home() {
       <FlashSale />
       <BrowserCategories />
       <SellingProduct />
-      <Categories />
+      {/* <Categories /> */}
       <ExploreProduct />
       <Feature />
       <DeliverySection />

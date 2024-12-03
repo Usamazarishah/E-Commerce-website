@@ -5,17 +5,17 @@ import { BsArrowUpShort } from "react-icons/bs";
 
 function Delivery(props) {
   return (
-    <div className="flex flex-col items-center text-center gap-2 pt-16 mb-10">
+    <div className="flex flex-col items-center text-center gap-4 lg:pt-16 mb-10">
       <img src={props.deliveryImage} alt="" />
-      <p className="text-xl font-semibold mt-4">{props.deliveryName}</p>
-      <p className="text-sm">{props.deliveryTitle}</p>
+      <p className="text-lg lg:text-xl font-semibold mt-4">{props.deliveryName}</p>
+      <p className="text-xs lg:text-sm flex items-center">{props.deliveryTitle}</p>
     </div>
   );
 }
 export default function DeliverySection() {
   return (
     <>
-      <div className="flex justify-center gap-24">
+      <div className="flex mx-4 md:mx-16 lg:mx-[92px] items-center justify-between xl:justify-evenly gap-3">
         <Delivery
           deliveryImage={delivery_img}
           deliveryName="FREE AND FAST DELIVERY"

@@ -19,26 +19,30 @@ function Test(Props) {
 export default function BrowserCategories() {
   return (
     <>
-      <div className="container-x mt-32">
-        <div className="flex gap-4 items-center">
-          <span className="bg-primary py-5 px-[10px] rounded"></span>
-          <span className="text-primary font-semibold text-base">
-            Categories
-          </span>
+      <div className="mx-4 md:mx-16 lg:mx-[92px]  mt-32">
+      <div className="flex gap-3 md:gap-4 items-center">
+        <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
+        <span className="text-primary font-semibold text-sm md:text-base">Categories</span>
+      </div>
+
+        <div className="flex  justify-between items-center text-center mt-3 sm:mt-5">
+          <div className=" ">
+          <p className="flex  text-lg sm:text-3xl md:text-3xl lg:text-4xl font-semibold ">Browse By Category</p>
+          </div>
+
+        {/* mobile arrow */}
+        <div className="flex sm:hidden gap-2 -mt-3">
+          <BsArrowLeftShort className="arrow_mobile " />
+          <BsArrowRightShort className="arrow_mobile" />
         </div>
-
-        <div className="flex justify-between items-center text-center mt-5 ">
-          <div className="flex items-center gap-5 ">
-            <p className="text-4xl font-semibold ">Browse By Category</p>
-          </div>
-
-          <div className=" flex  gap-2 text-4xl -mt-3">
-            <BsArrowLeftShort className="arrow" />
-            <BsArrowRightShort className="arrow" />
-          </div>
+        {/* desktop arrow */}
+        <div className="hidden sm:flex gap-2 -mt-3 ">
+          <BsArrowLeftShort className="arrow_desktop " />
+          <BsArrowRightShort className="arrow_desktop" />
+        </div>
         </div>
       </div>
-      <div className="flex container-x my-5 pt-10 gap-8">
+      <div className="flex container-x my-5 pt-10 gap-8 flex-wrap">
         <Test CategoriesIcon={<CiMobile3 />} CategoriesName="Phones" />
         <Test CategoriesIcon={<RiComputerLine />} CategoriesName="Computers" />
         <Test CategoriesIcon={<BsSmartwatch />} CategoriesName="SmartWatch" />

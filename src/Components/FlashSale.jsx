@@ -11,11 +11,11 @@ import { Link } from "react-router-dom";
 export default function FlashSale() {
   const { products, isLoading, error } = useProducts("limit=4");
   return (
-    <div className="container-x">
+    <div className=" mx-4 md:mx-16 lg:mx-[92px]">
       {isLoading ? "Loading..." : ""}
       {error}
 
-      <div className="flex  gap-7 flex-wrap">
+      <div className="flex flex-col sm:flex-row gap-7">
         {products?.map((item) => {
           return (
             <ProductCard

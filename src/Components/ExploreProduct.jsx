@@ -18,23 +18,27 @@ export default function ExploreProduct() {
 
   return (
     <div>
-      <div className=" mx-[92px] mt-16">
-        <div className="flex gap-4 items-center">
-          <span className="bg-primary py-5 px-[10px] rounded"></span>
-          <span className="text-primary font-semibold text-base">
-            Our Products
-          </span>
-        </div>
+      <div className="mx-4 md:mx-16 lg:mx-[92px] mt-16">
+      <div className="flex gap-3 md:gap-4 items-center">
+        <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
+        <span className="text-primary font-semibold text-sm md:text-base">Our Products</span>
+      </div>
 
-        <div className="flex justify-between items-center text-center mt-5 ">
+        <div className="flex justify-between items-center text-center mt-3 sm:mt-5 ">
           <div className="flex items-center gap-5 ">
-            <p className="text-4xl font-semibold ">Explore Our Products</p>
+            <p className="flex  text-lg sm:text-3xl md:text-3xl lg:text-4xl font-semibold ">Explore Our Products</p>
           </div>
 
-          <div className=" flex  gap-2 text-4xl -mt-3">
-            <BsArrowLeftShort className="arrow" />
-            <BsArrowRightShort className="arrow" />
-          </div>
+        {/* mobile arrow */}
+        <div className="flex sm:hidden gap-2 -mt-3">
+          <BsArrowLeftShort className="arrow_mobile " />
+          <BsArrowRightShort className="arrow_mobile" />
+        </div>
+        {/* desktop arrow */}
+        <div className="hidden sm:flex gap-2 -mt-3 ">
+          <BsArrowLeftShort className="arrow_desktop " />
+          <BsArrowRightShort className="arrow_desktop" />
+        </div>
         </div>
       </div>
 

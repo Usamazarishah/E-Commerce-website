@@ -7,8 +7,8 @@ export default function ProductCard(Props) {
   //   console.log(Props);
 
   return (
-    <Link to={`/product/${Props.id}`} className="w-[270px] h-[350px] my-4 ">
-      <div className="h-[250px] bg-secondary  rounded flex items-center justify-center">
+    <Link to={`/product/${Props.id}`} className="w-[calc(25%-28px)] h-auto my-10 mx-auto">
+      <div className="w-full bg-secondary  rounded flex items-center justify-center ">
         <div className="relative h-full w-full p-3">
           <div className="absolute top-3">
             {Props.cardDiscount ? (

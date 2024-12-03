@@ -7,10 +7,15 @@ import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Signup from "./Pages/Signup";
 import ApiProduct from "./Pages/ApiProduct";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link, useLocation } from "react-router-dom";
 import ProductDetail from "./Pages/ProductDetail";
+import { useEffect } from "react";
 
 export default function App() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Banner />
@@ -25,7 +30,7 @@ export default function App() {
         <Route path="/product/:id" element={<ProductDetail/>} />
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

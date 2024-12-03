@@ -21,7 +21,7 @@ export default function Navbar() {
   const isLoggedIn = true;
   return (
     <div className=" shadow-md border-b-gray-300  sticky z-10 top-14 sm:top-12 bg-white ">
-      <div className="h-[85px] flex justify-between items-center text-center mx-4 sm:mx-4 md:mx-16 xl:mx-[92px] pt-5">
+      <div className="h-[85px] flex justify-between items-center text-center mx-4 sm:mx-4 md:mx-16 xl:mx-[92px] pt-5  ">
         <img src={desktopLogo} alt="" className="hidden sm:flex" />
         <img src={mobileLogo} alt="" className="w-10 sm:w-12 flex sm:hidden " />
 
@@ -42,7 +42,7 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-6 text-center">
-          <div className="flex bg-secondary color-black w-40 sm:w-56 md:w-60 h-7 sm:h-9  justify-around items-center  text-sm rounded px-4">
+          <div className="flex bg-secondary color-black w-40 sm:ml-4 lg:ml-0 sm:w-56 md:w-60 h-7 sm:h-9  justify-around items-center  text-sm rounded px-4">
             <input
               type="search"
               className="nav_input bg-transparent outline-none w-full"
@@ -51,9 +51,9 @@ export default function Navbar() {
             <CiSearch className="text-xl sm:text-2xl font-extrabold text-black" />
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
               {isLoggedIn ? (
-                <div className="hidden  sm:flex gap-4 items-center text-center">
+                <div className="hidden  sm:flex gap-2 md:gap-4 items-center text-center">
                   <a href="" className="w-9 h-9 text-2xl icons flex items-center justify-center">
                   <IoHeartOutline className=" text-2xl " />
                   </a>

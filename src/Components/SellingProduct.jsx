@@ -11,25 +11,27 @@ export default function SellingProduct() {
   const { products, isLoading, error } = useProducts("limit=4&skip=34");
   return (
     <div>
-      <div className="container-x pt-12">
-        <div className="flex gap-4 items-center">
-          <span className="bg-primary py-5 px-[10px] rounded"></span>
-          <span className="text-primary font-semibold text-base">
+      <div className="mx-4 md:mx-16 lg:mx-[92px]  pt-12">
+        <div className="flex gap-3 md:gap-4 items-center">
+          <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
+          <span className="text-primary font-semibold text-sm md:text-base">
             This Month
           </span>
         </div>
 
-        <div className="flex justify-between items-center text-center mt-5 ">
+        <div className="flex justify-between items-center text-center mt-3 sm:mt-5 ">
           <div className="flex items-center gap-5 ">
-            <p className="text-4xl font-semibold ">Best Selling Products</p>
+            <p className="flex  text-lg sm:text-3xl md:text-3xl lg:text-4xl font-semibold ">
+              Best Selling Products
+            </p>
           </div>
 
-          <div className="bg-primary w-40 h-14 rounded text-white text-center pt-4 -mt-3 hover:cursor-pointer">
+          <div className="bg-primary w-24 sm:w-40 h-10 sm:h-14 rounded text-white text-sm sm:text-base text-center pt-[10px] sm:pt-4 -mt-3 sm:-mt-5 lg:-mt-3 hover:cursor-pointer">
             <Link to={"api-product"}>View All</Link>
           </div>
         </div>
       </div>
-      <div className="flex container-x gap-7 pt-7">
+      <div className="flex container-x gap-7 pt-7 flex-wrap">
         {isLoading ? "Loading..." : ""}
         {error}
 
