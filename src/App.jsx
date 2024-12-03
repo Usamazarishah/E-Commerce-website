@@ -30,7 +30,7 @@ export default function App() {
         <Route path="/product/:id" element={<ProductDetail/>} />
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
