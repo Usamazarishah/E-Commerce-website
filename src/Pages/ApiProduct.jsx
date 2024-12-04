@@ -35,7 +35,8 @@ export default function ApiProduct() {
         />
         <CiSearch className="text-xl sm:text-2xl font-extrabold text-black" />
       </div>
-      <div className="flex flex-wrap gap-8 justify-center items-center text-center">
+      <div className="flex flex-wrap gap-2 sm:gap-2 xl:gap-7 justify-center items-center text-center  mx-4 md:mx-16 lg:mx-[92px]  sm:my-4 md:my-6 lg:my-10">
+
         {searchResult.length === 0 ? "product not found..." : ""}
 
         {searchResult?.map((item) => {

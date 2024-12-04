@@ -9,7 +9,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 
 function Test(Props) {
   return (
-    <div className=" border border-[#0000004D] w-[170px] h-36 rounded flex flex-col text-center items-center pt-6 gap-4">
+    <div className=" border border-[#0000004D] w-[calc(50%-15px)] sm:w-[calc(33.33%-18px)] md:w-[calc(25%-19px)] lg:w-[calc(16.66%-14px)] xl:w-[calc(16.66%-27px)] h-36  md:h-32 lg:h-[130px] xl:h-36 rounded flex flex-col text-center items-center justify-center lg:pt-3  xl:pt-6 gap-4">
       <span className="text-6xl">{Props.CategoriesIcon}</span>
       <p className="font-medium">{Props.CategoriesName}</p>
     </div>
@@ -30,19 +30,15 @@ export default function BrowserCategories() {
           <p className="flex  text-lg sm:text-3xl md:text-3xl lg:text-4xl font-semibold ">Browse By Category</p>
           </div>
 
-        {/* mobile arrow */}
-        <div className="flex sm:hidden gap-2 -mt-3">
-          <BsArrowLeftShort className="arrow_mobile " />
-          <BsArrowRightShort className="arrow_mobile" />
+        {/* arrow */}
+        <div className="flex gap-2 sm:-mt-2 lg:-mt-1 ">
+          <BsArrowLeftShort className="arrow_mobile sm:arrow_desktop" />
+          <BsArrowRightShort className="arrow_mobile sm:arrow_desktop" />
         </div>
-        {/* desktop arrow */}
-        <div className="hidden sm:flex gap-2 -mt-3 ">
-          <BsArrowLeftShort className="arrow_desktop " />
-          <BsArrowRightShort className="arrow_desktop" />
-        </div>
+
         </div>
       </div>
-      <div className="flex container-x my-5 pt-10 gap-8 flex-wrap">
+      <div className="flex  mx-4 md:mx-16 lg:mx-[92px] my-5 pt-10  flex-wrap gap-6 lg:gap-4 xl:gap-8">
         <Test CategoriesIcon={<CiMobile3 />} CategoriesName="Phones" />
         <Test CategoriesIcon={<RiComputerLine />} CategoriesName="Computers" />
         <Test CategoriesIcon={<BsSmartwatch />} CategoriesName="SmartWatch" />
@@ -50,7 +46,7 @@ export default function BrowserCategories() {
         <Test CategoriesIcon={<FiHeadphones />} CategoriesName="HeadPhones" />
         <Test CategoriesIcon={<TbDeviceGamepad />} CategoriesName="Gaming" />
       </div>
-      <div className="border-b border-y-[#0000004D] mb-5 container-x pt-10"></div>
+      <div className="border-b border-y-gray-300 mb-5 mx-8 md:mx-16 lg:mx-[92px] pt-6 sm:pt-10"></div>
     </>
   );
 }

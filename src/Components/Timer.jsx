@@ -39,16 +39,12 @@ export default function Timer() {
           </div>
         </div>
         
-        {/* mobile arrow */}
-        <div className="flex sm:hidden gap-2 -mt-[120px]">
-          <BsArrowLeftShort className="arrow_mobile " />
-          <BsArrowRightShort className="arrow_mobile" />
+        {/* arrow */}
+        <div className="flex gap-2 -mt-[120px] sm:-mt-2 lg:-mt-1">
+          <BsArrowLeftShort className="arrow_mobile sm:arrow_desktop" />
+          <BsArrowRightShort className="arrow_mobile sm:arrow_desktop" />
         </div>
-        {/* desktop arrow */}
-        <div className="hidden sm:flex gap-2 sm:-mt-2 lg:-mt-3 ">
-          <BsArrowLeftShort className="arrow_desktop " />
-          <BsArrowRightShort className="arrow_desktop" />
-        </div>
+
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ export default function Hero() {
         </ul>
       </div>
       <div className="mt-7 sm:mt-10 mx-4 md:mx-16 lg:mx-0">
-        <img src={hero_img} alt="Hero_image" className="h-[180px] sm:h-[320px] lg:h-[340px] lg:ml-7 object-fill"/>
+        <img src={hero_img} alt="Hero_image" className="h-[150px] sm:h-[320px] lg:h-[340px] lg:ml-7 object-fill"/>
       </div>
     </div>
   );

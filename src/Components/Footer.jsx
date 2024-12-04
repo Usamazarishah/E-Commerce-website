@@ -11,8 +11,8 @@ import { PiCopyright } from "react-icons/pi";
 export default function Footer() {
   return (
     <div className="bg-black text-white min-h-96 mt-8">
-      <div className="mx-[92px] flex justify-between items-baseline text-start pt-[72px]">
-        <div className="flex flex-col gap-4">
+      <div className="mx-[92px] flex flex-wrap justify-between items-baseline text-start pt-[72px] gap-8 md:gap-4">
+        <div className="flex flex-col gap-4 w-full md:w-auto">
           <h2 className="font-bold text-2xl ">Exclusive</h2>
           <p className="text-[20px] font-medium pt-1.5">Subscribe</p>
           <p className=" footer_text">Get 10% off your first order</p>
@@ -25,7 +25,7 @@ export default function Footer() {
             <VscSend className=" text-3xl" />
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 w-full sm:w-1/2 md:w-auto">
           <h3 className=" text-[20px] font-medium">Support</h3>
           <p className="pt-1.5 footer_text">
             111 Bijoy sarani, Dhaka,
@@ -34,7 +34,7 @@ export default function Footer() {
           <p className=" footer_text">exclusive@gmail.com</p>
           <p className=" footer_text">+88015-88888-9999</p>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 w-full sm:w-1/2 md:w-auto">
           <h3 className=" text-[20px] font-medium">Account</h3>
           <p className="pt-1.5 footer_text">My Account</p>
           <p className="footer_text">Login / Register</p>
@@ -42,14 +42,14 @@ export default function Footer() {
           <p className="footer_text">Wishlist</p>
           <p className="footer_text">Shop</p>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 w-full sm:w-1/2 md:w-auto">
           <h3 className=" text-[20px] font-medium">Quick Link</h3>
           <p className="pt-1.5 footer_text">Privacy Policy</p>
           <p className="footer_text">Terms Of Use</p>
           <p className="footer_text">FAQ</p>
           <p className="footer_text">Contact</p>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 w-full sm:w-1/2 md:w-auto">
           <h3 className=" text-[20px] font-medium">Download App</h3>
           <p className="pt-1.5 text-xs font-medium text-zinc-400">
             Save $3 with App New User Only{" "}
@@ -71,7 +71,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      
+
       <div className="flex justify-center items-center text-center gap-[6px] mt-[70px] text-zinc-500 pb-6">
         <PiCopyright className="text-[22px]" />
         <p>Copyright Rimel 2022. All right reserved</p>

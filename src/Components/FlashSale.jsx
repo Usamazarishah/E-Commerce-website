@@ -15,7 +15,7 @@ export default function FlashSale() {
       {isLoading ? "Loading..." : ""}
       {error}
 
-      <div className="flex flex-col sm:flex-row gap-7">
+      <div className="flex flex-wrap gap-2 sm:gap-2 xl:gap-7 sm:my-4 md:my-6 lg:my-10">
         {products?.map((item) => {
           return (
             <ProductCard
@@ -34,12 +34,12 @@ export default function FlashSale() {
           );
         })}
       </div>
-      <div className="bg-primary text-white w-60 h-14 rounded my-8 mx-auto text-center p-[18px] hover:cursor-pointer ">
+      <div className="bg-primary text-white w-40 h-12 text-sm sm:text-base sm:w-60 sm:h-14 rounded mt-10 sm:my-10 mx-auto text-center p-[15px] sm:p-[18px] hover:cursor-pointer ">
         <Link to="api-product" className="">
           View All Products
         </Link>
       </div>
-      <div className="border-b border-y-gray-300 -mb-12 container-x pt-5"></div>
+      <div className="border-b border-y-gray-300 -mb-20 sm:-mb-14  pt-8 sm:pt-5 mx-4 sm:mx-0 pt"></div>
     </div>
   );
 }

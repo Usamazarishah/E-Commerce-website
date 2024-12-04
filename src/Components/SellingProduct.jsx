@@ -11,7 +11,7 @@ export default function SellingProduct() {
   const { products, isLoading, error } = useProducts("limit=4&skip=34");
   return (
     <div>
-      <div className="mx-4 md:mx-16 lg:mx-[92px]  pt-12">
+      <div className="mx-4 md:mx-16 lg:mx-[92px] pt-8 sm:pt-12">
         <div className="flex gap-3 md:gap-4 items-center">
           <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
           <span className="text-primary font-semibold text-sm md:text-base">
@@ -31,11 +31,11 @@ export default function SellingProduct() {
           </div>
         </div>
       </div>
-      <div className="flex container-x gap-7 pt-7 flex-wrap">
+      <div className="mx-4 md:mx-16 lg:mx-[92px]">
         {isLoading ? "Loading..." : ""}
         {error}
 
-        <div className="flex  gap-7 flex-wrap">
+        <div className="flex flex-wrap gap-2  xl:gap-7 sm:my-4 md:my-6 lg:my-10">
           {products?.map((item) => {
             return (
               <ProductCard

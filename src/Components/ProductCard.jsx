@@ -7,23 +7,23 @@ export default function ProductCard(Props) {
   //   console.log(Props);
 
   return (
-    <Link to={`/product/${Props.id}`} className="w-[calc(25%-28px)] h-auto my-10 mx-auto">
+    <Link to={`/product/${Props.id}`} className="w-[calc(50%-8px)] sm:w-[calc(32%)] lg:w-[calc(25%-10px)] xl:w-[calc(25%-28px)] h-auto mt-5  mx-auto">
       <div className="w-full bg-secondary  rounded flex items-center justify-center ">
-        <div className="relative h-full w-full p-3">
-          <div className="absolute top-3">
+        <div className="relative  w-full p-2 sm:p-3">
+          <div className="absolute top-2 sm:top-3">
             {Props.cardDiscount ? (
-              <p className="bg-primary rounded text-white text-xs   py-[5px] px-3 ">
+              <p className="bg-primary rounded text-white text-xs  py-1 px-2 sm:py-[5px] sm:px-3 ">
                 {Props.cardDiscount}
               </p>
             ) : Props.newItem ? (
-              <p className="bg-[#00FF66] rounded text-white text-xs   py-[5px] px-3">
+              <p className="bg-[#00FF66] rounded text-white text-xs  py-1 px-2 sm:py-[5px] sm:px-3">
                 {Props.newItem}
               </p>
             ) : null}
           </div>
-          <div className="flex flex-col gap-2 absolute right-3">
-            <TiHeartOutline className="card_icon" />
-            <FiEye className="card_icon" />
+          <div className="flex flex-col gap-[3px] sm:gap-2 absolute right-2 sm:right-3">
+            <TiHeartOutline className="card_icon_mobile sm:card_icon_desktop" />
+            <FiEye className="card_icon_mobile sm:card_icon_desktop" />
           </div>
           <div className="flex items-center justify-center h-full">
             <img src={Props.cardImage} className="" alt="controller" />
@@ -31,19 +31,20 @@ export default function ProductCard(Props) {
         </div>
       </div>
       <div className="flex flex-col">
-        <p className="pt-4 font-medium text-base text-start">
+        <p className=" pt-3 sm:pt-4 font-normal  sm:font-medium text-sm sm:text-base text-start">
           {Props.cardName}
         </p>
-        <p className="flex gap-3 pt-2">
-          <span className="text-primary font-medium">
+        <p className="flex gap-2 sm:gap-3 pt-[6px] sm:pt-2">
+          <span className="text-primary  text-sm sm:text-base font-medium">
             {Props.discountedRate}
           </span>
-          <span className="font-medium text-gray-500 line-through">
+          <span className="text-sm sm:text-base font-medium text-gray-500 line-through">
             {Props.oldRate}
           </span>
         </p>
         <div className="flex text-center items-center text-[#FFAD33] gap-2 ">
           <ReactStars
+            className="react-stars"
             count={5}
             value={Props.rating}
             edit={false}

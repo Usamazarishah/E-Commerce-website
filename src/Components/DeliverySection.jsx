@@ -5,17 +5,17 @@ import { BsArrowUpShort } from "react-icons/bs";
 
 function Delivery(props) {
   return (
-    <div className="flex flex-col items-center text-center gap-4 lg:pt-16 mb-10">
+    <div className="flex flex-col items-center text-center gap-2 sm:gap-4 lg:pt-16 mb-6 sm:mb-10">
       <img src={props.deliveryImage} alt="" />
       <p className="text-lg lg:text-xl font-semibold mt-4">{props.deliveryName}</p>
-      <p className="text-xs lg:text-sm flex items-center">{props.deliveryTitle}</p>
+      <p className="text-xs lg:text-sm flex items-center sm:h-4 lg:h-0">{props.deliveryTitle}</p>
     </div>
   );
 }
 export default function DeliverySection() {
   return (
     <>
-      <div className="flex mx-4 md:mx-16 lg:mx-[92px] items-center justify-between xl:justify-evenly gap-3">
+      <div className="flex flex-col sm:flex-row mx-4 md:mx-16 lg:mx-[92px] items-center justify-between xl:justify-evenly sm:gap-3">
         <Delivery
           deliveryImage={delivery_img}
           deliveryName="FREE AND FAST DELIVERY"
@@ -32,8 +32,8 @@ export default function DeliverySection() {
           deliveryTitle="We reurn money within 30 days"
         />
       </div>
-      <a href="#" className="flex justify-end mr-[92px] mt-2 ">
-        <BsArrowUpShort className="arrow" />
+      <a href="#" className="flex justify-end mt-2 mr-4 md:mr-16 lg:mr-[92px]">
+        <BsArrowUpShort className="arrow_mobile sm:arrow_desktop" />
       </a>
     </>
   );
