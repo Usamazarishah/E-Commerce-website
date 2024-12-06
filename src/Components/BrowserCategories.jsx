@@ -19,7 +19,7 @@ function Test(Props) {
 export default function BrowserCategories() {
   return (
     <>
-      <div className="mx-4 md:mx-16 lg:mx-[92px]  mt-32">
+      <div className="mx-4 md:mx-16 lg:mx-[92px] mt-32">
       <div className="flex gap-3 md:gap-4 items-center">
         <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
         <span className="text-primary font-semibold text-sm md:text-base">Categories</span>
@@ -38,7 +38,7 @@ export default function BrowserCategories() {
 
         </div>
       </div>
-      <div className="flex  mx-4 md:mx-16 lg:mx-[92px] my-5 pt-10  flex-wrap gap-6 lg:gap-4 xl:gap-8">
+      <div className="flex  mx-4 md:mx-16 lg:mx-[92px] my-5 sm:pt-6 lg:pt-8 xl:pt-10  flex-wrap gap-6 lg:gap-4 xl:gap-8">
         <Test CategoriesIcon={<CiMobile3 />} CategoriesName="Phones" />
         <Test CategoriesIcon={<RiComputerLine />} CategoriesName="Computers" />
         <Test CategoriesIcon={<BsSmartwatch />} CategoriesName="SmartWatch" />

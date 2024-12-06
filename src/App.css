@@ -58,11 +58,16 @@ body {
     font-size: 20px;
   }
 }
-
-.footer_text {
-  font-size: 15px;
+.footer_text_mobile{
+  font-size: 12px;
   font-weight: 300;
 }
+@media (min-width:1024px){
+ .lg\:footer_text_desktop {
+  font-size: 15px;
+  font-weight: 300;
+}}
+  
 .container-x {
   margin-left: 92px;
   margin-right: 92px;

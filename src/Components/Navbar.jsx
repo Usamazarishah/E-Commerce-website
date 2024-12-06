@@ -5,11 +5,18 @@ import { HiMiniUserCircle } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
+// theme icon
+import { IoMdSunny } from "react-icons/io";
+import { IoMoon } from "react-icons/io5";
 
 import desktopLogo from "../assets/images/logo_desktop.svg";
 import mobileLogo from "../assets/images/logo_mobile.svg";
 import profileImg from "../assets/images/profile_img.jpg";
 import { useState } from "react";
+import { icon } from "@fortawesome/fontawesome-svg-core";
+
+import { toggleDarkMode } from "../redux/darkModeSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const links = [
   { title: "Home", link: "/" },
@@ -17,16 +24,20 @@ const links = [
   { title: "Contact Us", link: "/contact" },
 ];
 export default function Navbar() {
+  // {for redux}
+  const dispatch = useDispatch();
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
+
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   return (
-    <div className=" shadow-md border-b-gray-300  sticky z-10 top-14 sm:top-12 bg-white ">
-      <div className="h-[85px] flex justify-between items-center text-center mx-4 sm:mx-4 md:mx-16 xl:mx-[92px] pt-5  ">
+    <div className={` shadow-md border-b-gray-300  sticky z-10 top-10 sm:top-12 ${darkMode ? 'bg-slate-900' : 'bg-white'}  `}>
+      <div className="h-[65px] sm:h-[85px] flex justify-between items-center text-center mx-4 sm:mx-4 md:mx-16 xl:mx-[92px] pt-2 sm:pt-5  ">
         <img src={desktopLogo} alt="" className="hidden sm:flex" />
         <img src={mobileLogo} alt="" className="w-10 sm:w-12 flex sm:hidden " />
 
         {/* for desktop */}
-        <ul className="hidden lg:flex gap-10 font-normal ">
+        <ul className={` hidden lg:flex gap-10 font-normal ${darkMode ? 'text-gray-50':''} `}>
           {links.map((item, i) => {
             return (
               <li className="link_hover" key={i}>
@@ -42,7 +53,7 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-6 text-center">
-          <div className="flex bg-secondary color-black w-40 sm:ml-4 lg:ml-0 sm:w-56 md:w-60 h-7 sm:h-9  justify-around items-center  text-sm rounded px-4">
+          <div className="flex bg-secondary color-black w-40 ml-3 sm:ml-8 lg:ml-0 sm:w-56 md:w-60 h-[30px] sm:h-9  justify-around items-center  text-sm rounded px-4">
             <input
               type="search"
               className="nav_input bg-transparent outline-none w-full"
@@ -50,7 +61,11 @@ export default function Navbar() {
             />
             <CiSearch className="text-xl sm:text-2xl font-extrabold text-black" />
           </div>
-
+          {/* for theme */}
+          <button onClick={()=>dispatch(toggleDarkMode())}> 
+            {darkMode ? <IoMdSunny className="text-xl"/> : <IoMoon className="text-xl"/> }
+            
+          </button>
           <div className="flex items-center gap-2 md:gap-4">
               {isLoggedIn ? (
                 <div className="hidden  sm:flex gap-2 md:gap-4 items-center text-center">
@@ -62,7 +77,7 @@ export default function Navbar() {
                   </a>
                 </div>
               ) : null}
-            <div className="h-8 w-8 text-4xl bg-white rounded-full  overflow-hidden text-primary flex">
+            <div className="-ml-3 sm:-ml-0 mb-[3px] sm:mb-[2px] h-8 w-8 text-4xl bg-white rounded-full  overflow-hidden text-primary flex">
               {isLoggedIn ? (
                 <img src={profileImg} alt="" />
               ) : (
