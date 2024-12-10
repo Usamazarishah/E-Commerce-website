@@ -13,7 +13,6 @@ import desktopLogo from "../assets/images/logo_desktop.svg";
 import mobileLogo from "../assets/images/logo_mobile.svg";
 import profileImg from "../assets/images/profile_img.jpg";
 import { useState } from "react";
-import { icon } from "@fortawesome/fontawesome-svg-core";
 
 import { toggleDarkMode } from "../redux/darkModeSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,23 +30,41 @@ export default function Navbar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const isLoggedIn = false;
   return (
-    <div className={` shadow-md border-b-gray-300  sticky z-10 top-10 sm:top-12 ${darkMode ? 'bg-slate-900' : 'bg-white'}  `}>
+    <div
+      className={` shadow-md border-b-gray-300  sticky z-10 top-10 sm:top-12 ${
+        darkMode ? "bg-slate-900" : "bg-white"
+      }  `}
+    >
       <div className="h-[65px] sm:h-[85px] flex justify-between items-center text-center mx-4 sm:mx-4 md:mx-16 xl:mx-[92px] pt-2 sm:pt-5  ">
-        <img src={desktopLogo} alt="" className="hidden sm:flex" />
-        <img src={mobileLogo} alt="" className="w-10 sm:w-12 flex sm:hidden " />
+        <Link to={"/"}><img src={desktopLogo} alt="" className="hidden sm:flex" /></Link> 
+        <Link to={"/"}><img src={mobileLogo} alt="" className="w-10 sm:w-12 flex sm:hidden " /></Link>
 
         {/* for desktop */}
-        <ul className={` hidden lg:flex gap-10 font-normal ${darkMode ? 'text-gray-50':''} `}>
+        <ul className=" hidden lg:flex gap-10 font-normal ">
           {links.map((item, i) => {
             return (
-              <li className="link_hover" key={i}>
-                <Link to={item.link}>{item.title}</Link>
+              <li className={`link_hover `} key={i}>
+                <Link
+                  to={item.link}
+                  className={`${
+                    darkMode ? "text-white hover:text-primary" : ""
+                  }`}
+                >
+                  {item.title}
+                </Link>
               </li>
             );
           })}
           {!isLoggedIn ? (
             <li className="link_hover">
-              <Link to="/signup">Sign Up</Link>
+              <Link
+                to="/signup"
+                className={`${
+                  darkMode ? "text-white hover:text-primary" : ""
+                } `}
+              >
+                Sign Up
+              </Link>
             </li>
           ) : null}
         </ul>
@@ -62,26 +79,34 @@ export default function Navbar() {
             <CiSearch className="text-xl sm:text-2xl font-extrabold text-black" />
           </div>
           {/* for theme */}
-          <button onClick={()=>dispatch(toggleDarkMode())}> 
-            {darkMode ? <IoMdSunny className="text-xl"/> : <IoMoon className="text-xl"/> }
-            
+          <button
+            className={`text-xl ${darkMode ? "text-white " : ""}`}
+            onClick={() => dispatch(toggleDarkMode())}
+          >
+            {darkMode ? <IoMdSunny /> : <IoMoon />}
           </button>
           <div className="flex items-center gap-2 md:gap-4">
-              {isLoggedIn ? (
-                <div className="hidden  sm:flex gap-2 md:gap-4 items-center text-center">
-                  <a href="" className="w-9 h-9 text-2xl icons flex items-center justify-center">
+            {isLoggedIn ? (
+              <div className={`hidden  sm:flex gap-2 md:gap-4 items-center text-center `}>
+                <a
+                  href=""
+                  className={`w-9 h-9 text-2xl icons flex items-center justify-center ${darkMode ? "text-white hover:text-black":""}`}
+                >
                   <IoHeartOutline className=" text-2xl " />
-                  </a>
-                  <a href="" className="w-9 h-9 text-2xl icons flex items-center justify-center">
+                </a>
+                <a
+                  href=""
+                  className={`w-9 h-9 text-2xl icons flex items-center justify-center ${darkMode ? "text-white hover:text-black":""}`}
+                >
                   <IoCartOutline className="text-2xl" />
-                  </a>
-                </div>
-              ) : null}
-            <div className="-ml-3 sm:-ml-0 mb-[3px] sm:mb-[2px] h-8 w-8 text-4xl bg-white rounded-full  overflow-hidden text-primary flex">
+                </a>
+              </div>
+            ) : null}
+            <div className={`-ml-3 sm:-ml-0  h-8 w-8 text-4xl ${darkMode ? "bg-slate-900": "bg-white"} rounded-full  overflow-hidden text-primary flex`}>
               {isLoggedIn ? (
                 <img src={profileImg} alt="" />
               ) : (
-                <HiMiniUserCircle />
+                <HiMiniUserCircle className="w-full h-full "/>
               )}
             </div>
           </div>
@@ -91,7 +116,7 @@ export default function Navbar() {
         {!isHamburgerOpen && (
           <button
             onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
-            className="text-3xl lg:hidden order-3 w-9 h-9  icons flex items-center justify-center"
+            className={`text-3xl lg:hidden order-3 w-9 h-9  icons flex items-center justify-center ${darkMode ? 'text-white hover:text-black':''}`}
           >
             <IoMenu className="" />
           </button>
@@ -122,16 +147,22 @@ export default function Navbar() {
                   </Link>
                 </li>
               ) : null}
-                {isLoggedIn ? (
-                  <div  className="flex sm:hidden justify-center gap-6 mt-2">
-                  <a href="" className="w-9 h-9 text-2xl icons flex items-center justify-center">
-                  <IoHeartOutline className=" text-2xl " />
+              {isLoggedIn ? (
+                <div className="flex sm:hidden justify-center gap-6 mt-2">
+                  <a
+                    href=""
+                    className="w-9 h-9 text-2xl icons flex items-center justify-center"
+                  >
+                    <IoHeartOutline className=" text-2xl " />
                   </a>
-                  <a href="" className="w-9 h-9 text-2xl icons flex items-center justify-center">
-                  <IoCartOutline className="text-2xl" />
+                  <a
+                    href=""
+                    className="w-9 h-9 text-2xl icons flex items-center justify-center"
+                  >
+                    <IoCartOutline className="text-2xl" />
                   </a>
-                  </div>
-                ) : null}
+                </div>
+              ) : null}
             </ul>
           </div>
         )}

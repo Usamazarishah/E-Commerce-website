@@ -12,13 +12,15 @@ import { Link } from "react-router-dom";
 // import jacket_img from "../assets/images/card_images/jacket.png";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { BsArrowRightShort } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 export default function ExploreProduct() {
   const { products, isLoading, error } = useProducts("limit=8&skip=38");
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
 
   return (
-    <div>
-      <div className="mx-4 md:mx-16 lg:mx-[92px] mt-12 md:mt-16 lg:mt-20">
+    <div className={`${darkMode ? "bg-slate-900" : ""}`}>
+      <div className="mx-4 md:mx-16 lg:mx-[92px] pt-12 md:pt-16 lg:pt-20">
       <div className="flex gap-3 md:gap-4 items-center">
         <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
         <span className="text-primary font-semibold text-sm md:text-base">Our Products</span>
@@ -26,7 +28,7 @@ export default function ExploreProduct() {
 
         <div className="flex justify-between items-center text-center mt-3 sm:mt-5 ">
           <div className="flex items-center gap-5 ">
-            <p className="flex  text-lg sm:text-3xl md:text-3xl lg:text-4xl font-semibold ">Explore Our Products</p>
+            <h3 className={`flex  text-lg sm:text-3xl md:text-3xl lg:text-4xl font-semibold ${darkMode ? 'text-white':''} `}>Explore Our Products</h3>
           </div>
 
         {/* arrow */}
@@ -38,7 +40,7 @@ export default function ExploreProduct() {
         </div>
       </div>
 
-      <div className="mx-4 md:mx-16 lg:mx-[92px] sm:my-4 md:my-6 lg:my-10">
+      <div className="mx-4 md:mx-16 lg:mx-[92px] sm:py-4 md:py-6 lg:py-10 mb-8 sm:mb-6 lg:mb-4">
         {isLoading ? "Loading..." : ""}
         {error}
 
@@ -63,7 +65,7 @@ export default function ExploreProduct() {
         </div>
       </div>
 
-      <div className="bg-primary text-white w-40 h-12 text-sm sm:text-base sm:w-60 sm:h-14 rounded mt-10 sm:my-12 mx-auto text-center p-[15px] sm:p-[18px] hover:cursor-pointer ">
+      <div className="bg-primary text-white w-40 h-12 text-sm sm:text-base sm:w-60 sm:h-14 rounded mx-auto text-center p-[15px] sm:p-[18px] hover:cursor-pointer ">
         <Link to="api-product" className="">
           View All Products
         </Link>

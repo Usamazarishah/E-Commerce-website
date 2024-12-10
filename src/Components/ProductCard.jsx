@@ -2,13 +2,15 @@ import { TiHeartOutline } from "react-icons/ti";
 import { FiEye } from "react-icons/fi";
 import ReactStars from "react-stars";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function ProductCard(Props) {
   //   console.log(Props);
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
 
   return (
-    <Link to={`/product/${Props.id}`} className="w-[calc(50%-8px)] sm:w-[calc(32%)] lg:w-[calc(25%-10px)] xl:w-[calc(25%-28px)] h-auto mt-5  mx-auto">
-      <div className="w-full bg-secondary  rounded flex items-center justify-center ">
+    <Link to={`/product/${Props.id}`} className={`w-[calc(50%-8px)] sm:w-[calc(32%)] lg:w-[calc(25%-10px)] xl:w-[calc(25%-28px)] h-auto mt-5 rounded mx-auto ${darkMode ? "bg-gray-300":""}`}>
+      <div className={`w-full ${darkMode ? "bg-gray-300":"bg-secondary"}  rounded flex items-center justify-center `}>
         <div className="relative  w-full p-2 sm:p-3">
           <div className="absolute top-2 sm:top-3">
             {Props.cardDiscount ? (
@@ -25,12 +27,12 @@ export default function ProductCard(Props) {
             <TiHeartOutline className="card_icon_mobile sm:card_icon_desktop" />
             <FiEye className="card_icon_mobile sm:card_icon_desktop" />
           </div>
-          <div className="flex items-center justify-center h-full">
+          <div className="flex items-center justify-center min-h-[147px] sm:min-h-[170px] md:min-h-[180px] lg:min-h-[190px] xl:min-h-[230px]">
             <img src={Props.cardImage} className="" alt="controller" />
           </div>
         </div>
       </div>
-      <div className="flex flex-col">
+      <div className={`flex flex-col ${darkMode ? "px-3":""}`}>
         <p className=" pt-3 sm:pt-4 font-normal  sm:font-medium text-sm sm:text-base text-start">
           {Props.cardName}
         </p>

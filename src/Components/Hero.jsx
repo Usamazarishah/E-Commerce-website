@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import hero_img from "../assets/images/hero.png";
 
 const categories = [
@@ -12,22 +13,34 @@ const categories = [
   "Health & Beauty",
 ];
 export default function Hero() {
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
+
   return (
-    <div className="flex flex-col lg:flex-row justify-between  lg:mx-[92px] items-center">
-      <div className="flex lg:w-[30%]  xl:w-[19%] lg:border-r border-r-gray-300 order-2 lg:order-none mx-4 md:mx-16 lg:mx-0">
-        <ul className="flex flex-wrap lg:flex-col lg:gap-y-[17px] text-start text-sm sm:text-base mt-6 md:mt-9 gap-4 md:gap-6 ">
-          {categories.map((items,i) => (
-            <li className="" key={i}>
-              <a className="link_hover" href="">{items}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="mt-7 sm:mt-10 mx-4 md:mx-16 lg:mx-0">
-        <img src={hero_img} alt="Hero_image" className="h-[150px] sm:h-[320px] lg:h-[340px] lg:ml-7 object-fill"/>
+    <div className={`h-[calc(100vh-133px)] ${darkMode ? "bg-slate-900" : ""}`}>
+      <div
+        className={`flex flex-col lg:flex-row justify-between  lg:mx-[92px] items-center ${
+          darkMode ? "bg-slate-900" : ""
+        }`}
+      >
+        <div className={`flex lg:w-[30%]  xl:w-[19%] lg:border-r ${darkMode ? '!border-r-0' : ''} border-r-gray-300 order-2 lg:order-none mx-4 md:mx-16 lg:mx-0`}>
+          <ul className="flex flex-wrap lg:flex-col lg:gap-y-[17px] text-start text-sm sm:text-base mt-6 md:mt-9 gap-4 md:gap-6 ">
+            {categories.map((items, i) => (
+              <li  key={i}>
+                <a className={` link_hover ${darkMode ? '!text-white !link_hover' : ''}` } href="">
+                  {items}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-7 sm:mt-10 mx-4 md:mx-16 lg:mx-0">
+          <img
+            src={hero_img}
+            alt="Hero_image"
+            className="h-[150px] sm:h-[320px] lg:h-[340px] lg:ml-7 object-fill"
+          />
+        </div>
       </div>
     </div>
   );
 }
-
-

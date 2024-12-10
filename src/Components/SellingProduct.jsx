@@ -1,6 +1,7 @@
 import ProductCard from "./ProductCard";
 import useProducts from "../hooks/useProducts";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // import coat_img from "../assets/images/card_images/coat.png";
 // import bag_img from "../assets/images/card_images/bag.png";
@@ -9,9 +10,11 @@ import { Link } from "react-router-dom";
 
 export default function SellingProduct() {
   const { products, isLoading, error } = useProducts("limit=4&skip=34");
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
+
   return (
-    <div>
-      <div className="mx-4 md:mx-16 lg:mx-[92px] pt-8 sm:pt-12">
+    <div className={`${darkMode ? "bg-slate-900" : ""}`}>
+      <div className="mx-4 md:mx-16 lg:mx-[92px] pt-12 ">
         <div className="flex gap-3 md:gap-4 items-center">
           <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
           <span className="text-primary font-semibold text-sm md:text-base">
@@ -21,9 +24,9 @@ export default function SellingProduct() {
 
         <div className="flex justify-between items-center text-center mt-3 sm:mt-5 ">
           <div className="flex items-center gap-5 ">
-            <p className="flex  text-lg sm:text-3xl md:text-3xl lg:text-4xl font-semibold ">
+            <h3 className={`flex  text-lg sm:text-3xl md:text-3xl lg:text-4xl font-semibold ${darkMode ? 'text-white':''} `}>
               Best Selling Products
-            </p>
+            </h3>
           </div>
 
           <div className="bg-primary w-24 sm:w-40 h-10 sm:h-14 rounded text-white text-sm sm:text-base text-center pt-[10px] sm:pt-4 -mt-3 sm:-mt-5 lg:-mt-3 hover:cursor-pointer">
@@ -35,7 +38,7 @@ export default function SellingProduct() {
         {isLoading ? "Loading..." : ""}
         {error}
 
-        <div className="flex flex-wrap gap-2  xl:gap-7 sm:my-4 md:my-6 lg:my-10">
+        <div className="flex flex-wrap gap-2  xl:gap-7 sm:py-4 md:py-6 lg:py-10  pb-10 sm:pb-12 md:pb-16 lg:pb-24 xl:pb-28">
           {products?.map((item) => {
             return (
               <ProductCard
