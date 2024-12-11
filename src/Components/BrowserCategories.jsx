@@ -43,9 +43,9 @@ const darkMode = useSelector((state) => state.darkMode.darkMode);
           </div>
 
           {/* arrow */}
-          <div className="flex gap-2 sm:-mt-2 lg:-mt-1 ">
-            <BsArrowLeftShort className="arrow_mobile sm:arrow_desktop" />
-            <BsArrowRightShort className="arrow_mobile sm:arrow_desktop" />
+          <div className="hidden sm:flex gap-2 sm:-mt-2 lg:-mt-1 ">
+            <BsArrowLeftShort className="sm:arrow_desktop" />
+            <BsArrowRightShort className="sm:arrow_desktop" />
           </div>
         </div>
       </div>
