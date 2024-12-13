@@ -7,7 +7,7 @@ export default function Timer() {
 
   return (
     <div className={`${darkMode ? "bg-slate-900" : ""}`}>
-      <div className=" mx-4 md:mx-16 lg:mx-[92px] sm:pt-24 md:pt-32 lg:pt-12 xl:pt-0">
+      <div className=" mx-4 md:mx-16 xl:mx-[92px] sm:pt-24 md:pt-32 lg:pt-12 xl:pt-0">
         <div className="flex gap-3 md:gap-4 items-center">
           <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
           <span className="text-primary font-semibold text-sm md:text-base">

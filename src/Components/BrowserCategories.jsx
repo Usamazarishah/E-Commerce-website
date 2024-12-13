@@ -23,7 +23,7 @@ const darkMode = useSelector((state) => state.darkMode.darkMode);
 
   return (
     <div className={`${darkMode ? "bg-slate-900" : ""}`}>
-      <div className="mx-4 md:mx-16 lg:mx-[92px] pt-12 sm:pt-14 md:pt-16">
+      <div className="mx-4 md:mx-16 xl:mx-[92px] pt-12 sm:pt-14 md:pt-16">
         <div className="flex gap-3 md:gap-4 items-center">
           <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
           <span className="text-primary font-semibold text-sm md:text-base">
@@ -49,7 +49,7 @@ const darkMode = useSelector((state) => state.darkMode.darkMode);
           </div>
         </div>
       </div>
-      <div className="flex  mx-4 md:mx-16 lg:mx-[92px] my-5 sm:pt-6 lg:pt-8 xl:pt-10  flex-wrap gap-6 lg:gap-4 xl:gap-8">
+      <div className="flex  mx-4 md:mx-16 xl:mx-[92px] my-5 sm:pt-6 lg:pt-8 xl:pt-10  flex-wrap gap-6 lg:gap-4 xl:gap-8">
         <Test CategoriesIcon={<CiMobile3 />} CategoriesName="Phones" />
         <Test CategoriesIcon={<RiComputerLine />} CategoriesName="Computers" />
         <Test CategoriesIcon={<BsSmartwatch />} CategoriesName="SmartWatch" />
@@ -57,7 +57,7 @@ const darkMode = useSelector((state) => state.darkMode.darkMode);
         <Test CategoriesIcon={<FiHeadphones />} CategoriesName="HeadPhones" />
         <Test CategoriesIcon={<TbDeviceGamepad />} CategoriesName="Gaming" />
       </div>
-      <div className="border-b border-y-gray-300 pb-5 mx-8 md:mx-16 lg:mx-[92px]  sm:pt-10"></div>
+      <div className="border-b border-y-gray-300 pb-5 mx-8 md:mx-16 xl:mx-[92px]  sm:pt-10"></div>
     </div>
   );
 }

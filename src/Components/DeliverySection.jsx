@@ -20,7 +20,7 @@ export default function DeliverySection() {
 
   return (
     <div  className={`${darkMode ? "bg-slate-900" : ""}`}>
-      <div className="flex flex-col sm:flex-row mx-4 md:mx-16 lg:mx-[92px] items-center justify-between xl:justify-evenly sm:gap-3">
+      <div className="flex flex-col sm:flex-row mx-4 md:mx-16 xl:mx-[92px] items-center justify-between xl:justify-evenly sm:gap-3">
         <Delivery
           deliveryImage={delivery_img}
           deliveryName="FREE AND FAST DELIVERY"
@@ -37,7 +37,7 @@ export default function DeliverySection() {
           deliveryTitle="We reurn money within 30 days"
         />
       </div>
-      <a href="#" className="flex justify-end mt-6 mr-4 md:mr-16 lg:mr-[92px] pb-8">
+      <a href="#" className="flex justify-end mt-6 mr-4 md:mr-16 xl:mr-[92px] pb-8">
         <BsArrowUpShort className="arrow_mobile sm:arrow_desktop" />
       </a>
     </div>

@@ -15,7 +15,7 @@ export default function FlashSale() {
 
   return (
     <div className={`${darkMode ? "bg-slate-900" : ""}`}> 
-    <div className={` mx-4 md:mx-16 lg:mx-[92px] ${darkMode ? "bg-slate-900" : ""}`}>
+    <div className={` mx-4 md:mx-16 xl:mx-[92px] ${darkMode ? "bg-slate-900" : ""}`}>
       {isLoading ? "Loading..." : ""}
       {error}
 

@@ -20,7 +20,7 @@ export default function ExploreProduct() {
 
   return (
     <div className={`${darkMode ? "bg-slate-900" : ""}`}>
-      <div className="mx-4 md:mx-16 lg:mx-[92px] pt-12 md:pt-16 lg:pt-20">
+      <div className="mx-4 md:mx-16 xl:mx-[92px] pt-12 md:pt-16 lg:pt-20">
       <div className="flex gap-3 md:gap-4 items-center">
         <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
         <span className="text-primary font-semibold text-sm md:text-base">Our Products</span>
@@ -40,7 +40,7 @@ export default function ExploreProduct() {
         </div>
       </div>
 
-      <div className="mx-4 md:mx-16 lg:mx-[92px] sm:py-4 md:py-6 lg:py-10 mb-8 sm:mb-6 lg:mb-4">
+      <div className="mx-4 md:mx-16 xl:mx-[92px] sm:py-4 md:py-6 lg:py-10 mb-8 sm:mb-6 lg:mb-4">
         {isLoading ? "Loading..." : ""}
         {error}
 

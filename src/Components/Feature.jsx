@@ -7,7 +7,7 @@ export default function Feature() {
 
   return (
     <div className={`${darkMode ? "bg-slate-900" : ""}`}>
-      <div className="mx-4 md:mx-16 lg:mx-[92px]  ">
+      <div className="mx-4 md:mx-16 xl:mx-[92px]  ">
         <div className="pt-12 sm:pt-14  xl:pt-20">
           <div className="flex gap-3 md:gap-4 items-center">
             <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>

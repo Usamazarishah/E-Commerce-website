@@ -14,7 +14,7 @@ export default function SellingProduct() {
 
   return (
     <div className={`${darkMode ? "bg-slate-900" : ""}`}>
-      <div className="mx-4 md:mx-16 lg:mx-[92px] pt-12 ">
+      <div className="mx-4 md:mx-16 xl:mx-[92px] pt-12 ">
         <div className="flex gap-3 md:gap-4 items-center">
           <span className="bg-primary py-4 md:py-5 px-[8px] md:px-[10px] rounded"></span>
           <span className="text-primary font-semibold text-sm md:text-base">
@@ -34,7 +34,7 @@ export default function SellingProduct() {
           </div>
         </div>
       </div>
-      <div className="mx-4 md:mx-16 lg:mx-[92px]">
+      <div className="mx-4 md:mx-16 xl:mx-[92px]">
         {isLoading ? "Loading..." : ""}
         {error}
 

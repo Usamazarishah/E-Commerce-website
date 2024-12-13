@@ -6,7 +6,7 @@ export default function Categories() {
 
   return (
     <div className={`${darkMode ? "bg-slate-900" : ""}`}>
-      <div className="flex flex-col sm:flex-row justify-between items-center  mx-4 md:mx-16 lg:mx-[92px]  p-4 md:p-5 lg:p-6 xl:p-10  bg-[#000000] min-h-[500px] sm:min-h-[330px] md:min-h-[360px] lg:min-h-[450px] xl:h-[480px] text-white rounded">
+      <div className="flex flex-col sm:flex-row justify-between items-center  mx-4 md:mx-16 xl:mx-[92px]  p-4 md:p-5 lg:p-6 xl:p-10  bg-[#000000] min-h-[500px] sm:min-h-[330px] md:min-h-[360px] lg:min-h-[450px] xl:h-[480px] text-white rounded">
         <div className="w-[calc(100%)] sm:w-[calc(55%)] flex flex-col  gap-2 md:gap-3 lg:gap-4 xl:gap-8 mt-2 items-start">
           <p className="text-[#00FF66] text-sm sm:text-[15px] md:text-base">
             Categories
