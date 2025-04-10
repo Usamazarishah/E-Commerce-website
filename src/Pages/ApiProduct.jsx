@@ -7,11 +7,11 @@ import { useSelector } from "react-redux";
 export default function ApiProduct() {
   const darkMode = useSelector((state) => state.darkMode.darkMode);
 
-  const {products,isLoading,error} = useProducts("limit=30&skip=4")
+  const {products,isLoading,error} = useProducts("?limit=30&skip=4")
 
   // console.log("products=>", products);
   const [searchTerm, setSearchTerm] = useState("");
-  console.log("searchTerm", searchTerm);
+  // console.log("searchTerm", searchTerm);
 
   const searchProducts = () => {
     const result = products?.filter((item) => {
@@ -19,7 +19,7 @@ export default function ApiProduct() {
         .toLocaleLowerCase()
         .includes(searchTerm.toLocaleLowerCase());
     });
-    console.log("result", result);
+    // console.log("result", result);
 
     return result || [];
   };

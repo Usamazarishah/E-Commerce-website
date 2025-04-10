@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 // import bookself_img from "../assets/images/card_images/bookself.png";
 
 export default function SellingProduct() {
-  const { products, isLoading, error } = useProducts("limit=4&skip=34");
+  const { products, isLoading, error } = useProducts("?limit=4&skip=34");
   const darkMode = useSelector((state) => state.darkMode.darkMode);
 
   return (
@@ -29,7 +29,7 @@ export default function SellingProduct() {
             </h3>
           </div>
 
-          <div className="bg-primary w-24 sm:w-40 h-10 sm:h-14 rounded text-white text-sm sm:text-base text-center pt-[10px] sm:pt-4 -mt-3 sm:-mt-5 lg:-mt-3 hover:cursor-pointer">
+          <div className="bg-primary w-24 sm:w-40 h-10 sm:h-14 rounded text-white text-sm sm:text-base text-center pt-[10px] sm:pt-4 -mt-3 sm:-mt-5 lg:-mt-3 hover:cursor-pointer hover:bg-[#ff4949] hover:duration-500">
             <Link to={"api-product"}>View All</Link>
           </div>
         </div>
@@ -43,6 +43,7 @@ export default function SellingProduct() {
             return (
               <ProductCard
                 id={item.id}
+                // key={item.id }
                 cardImage={item.thumbnail}
                 cardDiscount={`-${Math.round(item.discountPercentage)}%`}
                 cardName={item.title}

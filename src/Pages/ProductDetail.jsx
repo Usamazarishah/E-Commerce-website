@@ -9,15 +9,15 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { HiArrowPath } from "react-icons/hi2";
 import { useSelector } from "react-redux";
 
-export default function ProductDetail() {
+export default  function  ProductDetail() {
   const params = useParams();
-  console.log("params", params);
+  // console.log("params", params);
   const { data, error, isLoading } = useSWR(
     `https://dummyjson.com/products/${params.id}`,
     axios
   );
-  const product = data?.data;
-  console.log("data ha ye mera", product);
+  const product  =  data?.data;
+  // console.log("data ha ye mera", product);
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [count, setCount] = useState(1);
@@ -69,7 +69,7 @@ export default function ProductDetail() {
                 color2={"#FFAD33"}
               />
               <span className=" text-gray-500 font-semibold text-sm">
-                ({product?.rating})
+                ({product?.rating} / 5)
               </span>
               <p className="text-gray-700 ml-2">|</p>
               <p className="text-[#00FF66] text-sm ml-2">{product?.availabilityStatus}</p>

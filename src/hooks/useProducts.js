@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function useProducts(query) {
-    const API_URL = `https://dummyjson.com/products?${query}`;
+export default function useProducts(query = "") {
+    const API_URL = `https://dummyjson.com/products${query}`;
 
     const [products, setProducts] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +17,7 @@ export default function useProducts(query) {
         // console.log("response=>", response.data.products);
         setProducts(response?.data?.products);
       } catch (error) {
-        setError(error?.response?.statusText || "Unkown error, please try again")
+        setError(error?.response?.statusText || "Unknown error, please try again")
         console.log("error ha koi",error?.response?.statusText);
       }
       finally{
@@ -29,7 +29,7 @@ export default function useProducts(query) {
   
     useEffect(() => {
       getProductData();
-    }, []);
+    }, [query]);
 
     return{
         products : products,

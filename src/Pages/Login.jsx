@@ -1,11 +1,10 @@
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Signup() {
-
+export default function Login() {
+  const BASE_URL = "https://third-assign-signup-login-backend.vercel.app";
   const navigate = useNavigate();
-  const BASE_URL = 'https://third-assign-signup-login-backend.vercel.app'
 
   const formSubmitHua = async (event) => {
     try {
@@ -13,24 +12,24 @@ export default function Signup() {
 
       const formData = new FormData(event.target);
 
-      const name = formData.get("name");
       const email = formData.get("email");
       const password = formData.get("password");
 
       const response = await axios.post(
-        `${BASE_URL}/api/v1/signup`,
+        `${BASE_URL}/api/v1/login`,
         {
-          name: name,
           email: email,
           password: password,
         },
-        { withCredentials: true },
+        { withCredentials: true }
       );
-      toast.success("You have successfully registered.")
-      navigate('/login')
+      const { token, user } = response?.data;
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
+      toast.success('You have Successfully Logged in.')
+      navigate('/')
     } catch (error) {
       console.log("error ", error);
-      toast.error(error.response?.data?.message || "unknown error")
     }
   };
 
@@ -41,22 +40,8 @@ export default function Signup() {
         className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col w-full"
       >
         <h2 className="text-gray-900 text-lg font-medium title-font mb-5">
-          Signup / Create account
+          Login
         </h2>
-
-        <div className="relative mb-4">
-          <label htmlFor="name" className="leading-7 text-sm text-gray-600">
-            Full name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            className="w-full bg-white rounded border border-gray-300 focus:border-primary focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-          />
-        </div>
-
         <div className="relative mb-4">
           <label htmlFor="email" className="leading-7 text-sm text-gray-600">
             Email
@@ -82,10 +67,11 @@ export default function Signup() {
           />
         </div>
         <button className="text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-[#ff4949] hover:duration-300 rounded text-lg">
-          Signup
+          Login
         </button>
         <p className="text-xs text-gray-500 mt-3">
-          Literally you probably haven't heard of them jean shorts.
+          {/* Alread have an account?  */}
+          Not have an account? <Link to="/signup" className="hover:text-primary duration-200">Signup</Link>
         </p>
       </form>
     </div>

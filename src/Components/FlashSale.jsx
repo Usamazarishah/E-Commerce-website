@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 // import axios from "axios";
 
 export default function FlashSale() {
-  const { products, isLoading, error } = useProducts("limit=4");
+  const { products, isLoading, error } = useProducts("?limit=4");
   const darkMode = useSelector((state) => state.darkMode.darkMode);
 
   return (
@@ -24,6 +24,7 @@ export default function FlashSale() {
           return (
             <ProductCard
               id={item.id}
+              // key={item.id }
               cardImage={item.thumbnail}
               cardDiscount={`-${Math.round(item.discountPercentage)}%`}
               cardName={item.title}
@@ -38,7 +39,7 @@ export default function FlashSale() {
           );
         })}
       </div>
-      <div className={`bg-primary  text-white w-40 h-12 text-sm sm:text-base sm:w-60 sm:h-14 rounded mt-10 sm:my-10 mx-auto text-center p-[15px] sm:p-[18px] hover:cursor-pointer `}>
+      <div className={`bg-primary  text-white w-40 h-12 text-sm sm:text-base sm:w-60 sm:h-14 rounded mt-10 sm:my-10 mx-auto text-center p-[15px] sm:p-[18px] hover:cursor-pointer hover:bg-[#ff4949] hover:duration-500`}>
         <Link to="api-product" className="">
           View All Products
         </Link>
